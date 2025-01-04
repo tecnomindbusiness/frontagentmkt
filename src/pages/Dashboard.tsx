@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { MessageCircle, Users, Clock, Zap } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { MessageCircle, Users, Zap } from 'lucide-react';
 import StatsCard from '../components/Dashboard/StatsCard';
+import { LucideIcon } from 'lucide-react';
+
 
 export default function Dashboard() {
   const [stats, setStat] = useState<{ [key: string]: number }>({});
@@ -40,7 +42,7 @@ export default function Dashboard() {
   console.log(stats);
 
   // Determinar os ícones para cada título
-  const iconMap: { [key: string]: React.ElementType } = {
+  const iconMap: { [key: string]: LucideIcon } = {
     Message: MessageCircle,
     Contact: Users,
     Chat: Zap,
@@ -56,8 +58,8 @@ export default function Dashboard() {
       />
 
       <div className="mb-8">
-        <h1 className="text-3xl font-bold">Dashboard</h1>
-        <p className="text-gray-400 mt-2">Monitor your AI agent's performance</p>
+        <h1 className="text-3xl font-bold">Painel</h1>
+        <p className="text-gray-400 mt-2">Monitore o desempenho do seu agente de IA</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -79,26 +81,26 @@ export default function Dashboard() {
       </div>
 
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Activity Chart */}
-        <div className="bg-gray-800 rounded-xl p-6">
-          <h3 className="text-xl font-semibold mb-4">Message Activity</h3>
-          <div className="h-64 flex items-center justify-center text-gray-500">
-            Chart will be implemented here
-          </div>
+      {/* Gráfico de Atividade */}
+      <div className="bg-gray-800 rounded-xl p-6">
+        <h3 className="text-xl font-semibold mb-4">Atividade de Mensagens</h3>
+        <div className="h-64 flex items-center justify-center text-gray-500">
+          O gráfico será implementado aqui
         </div>
+      </div>
 
-        {/* Recent Interactions */}
-        <div className="bg-gray-800 rounded-xl p-6">
-          <h3 className="text-xl font-semibold mb-4">Recent Interactions</h3>
-          <div className="space-y-4">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="flex items-center gap-4 p-3 rounded-lg bg-gray-700">
-                <div className="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center">
-                  <Users size={20} className="text-gray-400" />
-                </div>
-                <div>
-                  <p className="font-medium">User #{i}</p>
-                  <p className="text-sm text-gray-400">Last message 2m ago</p>
+      {/* Interações Recentes */}
+      <div className="bg-gray-800 rounded-xl p-6">
+        <h3 className="text-xl font-semibold mb-4">Interações Recentes</h3>
+        <div className="space-y-4">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="flex items-center gap-4 p-3 rounded-lg bg-gray-700">
+              <div className="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center">
+                <Users size={20} className="text-gray-400" />
+              </div>
+              <div>
+                <p className="font-medium">Usuário #{i}</p>
+                <p className="text-sm text-gray-400">Última mensagem há 2m</p>
                 </div>
               </div>
             ))}

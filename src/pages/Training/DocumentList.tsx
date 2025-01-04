@@ -1,11 +1,10 @@
-import React from 'react';
 import { File, Link2, CheckCircle, XCircle, Clock } from 'lucide-react';
 import type { TrainingDocument } from '../../types';
 
 const documents: TrainingDocument[] = [
   {
     id: '1',
-    name: 'Training Guide.pdf',
+    name: 'Guia de Treinamento.pdf',
     type: 'pdf',
     status: 'completed',
     uploadedAt: new Date('2024-03-10'),
@@ -33,7 +32,7 @@ const StatusIcon = ({ status }: { status: TrainingDocument['status'] }) => {
 export default function DocumentList() {
   return (
     <div className="bg-gray-800 rounded-xl p-6">
-      <h2 className="text-xl font-semibold mb-6">Training Documents</h2>
+      <h2 className="text-xl font-semibold mb-6">Documentos de Treinamento</h2>
       
       <div className="space-y-4">
         {documents.map((doc) => (

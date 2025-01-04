@@ -7,11 +7,11 @@ import { useNavigate } from 'react-router-dom';
 // Configuração do Supabase
 
 const navItems = [
-  { icon: Home, label: 'Dashboard', path: '/' },
-  { icon: Book, label: 'Training', path: '/training' },
+  { icon: Home, label: 'Painel', path: '/' },
+  { icon: Book, label: 'Trainamento', path: '/training' },
   { icon: MessageCircle, label: 'WhatsApp', path: '/whatsapp' },
-  { icon: Settings, label: 'Agent Settings', path: '/agent' },
-  { icon: User, label: 'Profile', path: '/profile' },
+  { icon: Settings, label: 'Configurações', path: '/agent' },
+  { icon: User, label: 'Perfil', path: '/profile' },
 ];
 
 interface LayoutProps {

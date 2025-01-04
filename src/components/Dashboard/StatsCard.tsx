@@ -1,4 +1,3 @@
-import React from 'react';
 import { LucideIcon } from 'lucide-react';
 
 interface StatsCardProps {
@@ -18,11 +17,11 @@ export default function StatsCard({ title, value, icon: Icon, trend }: StatsCard
         <div>
           <p className="text-gray-400 text-sm">{title}</p>
           <h3 className="text-2xl font-semibold mt-1">{value}</h3>
-          {/* {trend && (
+          {trend && (
             <p className={`text-sm mt-2 ${trend.isPositive ? 'text-green-400' : 'text-red-400'}`}>
               {trend.isPositive ? '↑' : '↓'} {Math.abs(trend.value)}%
             </p>
-          )} */}
+          )}
         </div>
         <div className="bg-gray-700 p-3 rounded-lg">
           <Icon size={24} className="text-indigo-400" />

@@ -1,19 +1,18 @@
-import React from 'react';
 import { Settings } from 'lucide-react';
 
-export default function BehaviorSettings() {
+export default function ConfiguracoesDeComportamento() {
   return (
     <div className="bg-gray-800 rounded-xl p-6">
       <div className="flex items-center gap-4 mb-6">
         <Settings className="text-indigo-400" />
-        <h2 className="text-xl font-semibold">Behavior Settings</h2>
+        <h2 className="text-xl font-semibold">Configurações de Comportamento</h2>
       </div>
 
       <div className="space-y-6">
         <div>
           <label className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-300">Response Time</span>
-            <span className="text-sm text-gray-400">2 seconds</span>
+            <span className="text-sm font-medium text-gray-300">Tempo de Resposta</span>
+            <span className="text-sm text-gray-400">2 segundos</span>
           </label>
           <input
             type="range"
@@ -30,7 +29,7 @@ export default function BehaviorSettings() {
               type="checkbox"
               className="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500"
             />
-            <span className="text-sm text-gray-300">Enable automatic greetings</span>
+            <span className="text-sm text-gray-300">Ativar saudações automáticas</span>
           </label>
         </div>
 
@@ -40,7 +39,7 @@ export default function BehaviorSettings() {
               type="checkbox"
               className="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500"
             />
-            <span className="text-sm text-gray-300">Use emojis in responses</span>
+            <span className="text-sm text-gray-300">Usar emojis nas respostas</span>
           </label>
         </div>
       </div>

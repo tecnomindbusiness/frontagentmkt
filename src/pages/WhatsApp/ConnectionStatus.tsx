@@ -1,4 +1,3 @@
-import React from 'react';
 import { Phone, PhoneOff } from 'lucide-react';
 
 export default function ConnectionStatus() {
@@ -8,7 +7,7 @@ export default function ConnectionStatus() {
     <div className="bg-gray-800 rounded-xl p-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-xl font-semibold mb-2">Connection Status</h2>
+          <h2 className="text-xl font-semibold mb-2">Status de Conexão</h2>
           <div className="flex items-center gap-2">
             <div className={`w-3 h-3 rounded-full ${isConnected ? 'bg-green-400' : 'bg-red-400'}`} />
             <span className="text-gray-300">

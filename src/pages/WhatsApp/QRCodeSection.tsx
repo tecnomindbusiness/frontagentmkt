@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { RefreshCw } from 'lucide-react';
 
 export default function QRCodeSection() {
@@ -15,7 +15,7 @@ export default function QRCodeSection() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:8081/instance/connect/frontzap', {
+      const response = await fetch('http://34.95.195.215:8081/instance/connect/frontzap', {
         method: 'GET',
         headers: {
           'apikey': `429383C4C977575CAAFCCE10F7D57E23`,
@@ -48,7 +48,19 @@ export default function QRCodeSection() {
       }
     } catch (error: any) {
       console.error('Error fetching QR Code:', error);
-      setError(`Error: ${error.message}`);
+      if (error instanceof Error) {
+        if (error instanceof Error) {
+          if (error instanceof Error) {
+            setError(`Error: ${error.message}`);
+          } else {
+            setError('An unknown error occurred');
+          }
+        } else {
+          setError('An unknown error occurred');
+        }
+      } else {
+        setError('An unknown error occurred');
+      }
     } finally {
       setLoading(false);
     }
@@ -62,7 +74,7 @@ export default function QRCodeSection() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:8081/instance/logout/frontzap', {
+      const response = await fetch('http://34.95.195.215:8081/instance/logout/frontzap', {
         method: 'DELETE',
         headers: {
           'apikey': `429383C4C977575CAAFCCE10F7D57E23`,
@@ -93,21 +105,6 @@ export default function QRCodeSection() {
     }
   };
 
-  const connect = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      // Refaça a conexão, ou chame o método que se conecta
-      await fetchQRCode();
-      // Alternativa para recarregar a página
-      window.location.href = window.location.href; // Redefine o URL para forçar o recarregamento
-    } catch (error) {
-      console.error('Error connecting:', error);
-      setError(`Error: ${error.message}`);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="bg-gray-800 rounded-xl p-6">
