@@ -11,7 +11,7 @@ export default function WhatsAppPage() {
       </div>
 
       <div className="grid gap-8">
-        <ConnectionStatus />
+        {/* <ConnectionStatus /> */}
         <QRCodeSection />
       </div>
     </div>
